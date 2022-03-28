@@ -1,0 +1,13 @@
+.celula img {
+    width: 9px;
+    cursor: pointer;
+}
+
+
+.celula_sem_botao img {
+    display: none;
+}
+
+.celula_sem_botao p {
+    display: none;
+}

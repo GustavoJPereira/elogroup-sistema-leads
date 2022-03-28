@@ -1,0 +1,182 @@
+.corpo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: calc(100vh - 60px);
+}
+
+.corpo form {
+    margin: 30px 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 1fr 75px;
+    align-items: center;
+    justify-items: center;
+    gap: 45px;
+}
+
+/* Posicionamento dos elementos no gird */
+.btn_voltar {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: baseline;
+}
+
+.btn_primario {
+    grid-column: 2;
+    grid-row: 3;
+    width: 430px;
+    justify-self: end;
+}
+
+.dados {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: baseline;
+}
+
+.tabelas {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* Estilização dos elementos */
+
+.dados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 440px;
+    min-height: 550px;
+    max-height: 550px;
+
+    padding: 50px 25px;
+
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.dados div {
+    display: flex;
+    flex-direction: column;
+}
+
+.dados input {
+    height: 40px;
+    width: 335px;
+
+    border: none;
+    border-bottom: 1px solid #272727;
+}
+
+.tabelas {
+    display: flex;
+    gap: 20px;
+    height: min-content;
+}
+
+.oportunidades {
+    border-collapse: collapse;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.oportunidades .barra_colorida td {
+    background-color: #9F2ABF;
+    height: 15px;
+}
+
+.oportunidades th,
+.oportunidades td {
+    height: 60px;
+
+    font-size: 24px;
+    text-align: center;
+
+}
+
+.oportunidades .lista {
+    min-width: 430px;
+}
+
+.oportunidades th {
+    background-color: #272727;
+    color: #FFF;
+}
+
+.oportunidades tr:nth-child(even) {
+    background-color: #EDEDED;
+}
+
+
+/* RESPONSIVIDADE */
+
+/* Resolve um bug que não permite reajustar o min-width */
+@media only screen and (min-width: 600px) {
+    .oportunidades th,
+    .oportunidades td {
+        min-width: 120px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .corpo form {
+        grid-template-columns: 1fr;
+        grid-template-rows: 30px 1fr min-content 75px;
+        width: min-content;
+        margin: 70px 0;
+    }
+
+    .dados {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        justify-self: center;
+    }
+
+    .tabelas {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .btn_primario {
+        grid-column: 1;
+        grid-row: 4;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .dados {
+        width: 100%;
+    }
+
+    .dados input {
+        width: 100%;
+    }
+
+    .tabelas {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .oportunidades th,
+    .oportunidades td {
+        min-width: 70px;
+    }
+
+    .oportunidades .lista {
+        min-width: 300px;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .oportunidades .lista {
+        min-width: 250px;
+    }
+}
