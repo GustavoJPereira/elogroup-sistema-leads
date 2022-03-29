@@ -8,6 +8,19 @@
     display: none;
 }
 
-.celula_sem_botao p {
+.celula p {
+    max-width: calc(100% - 50px);
+}
+
+.celula_sem_botao label {
     display: none;
+}
+
+.celula div {
+    width: fit-content !important;
+    background-color: transparent !important;
+}
+
+.celula_sem_botao div {
+    display: none !important;
 }

@@ -21,9 +21,21 @@ function LeadsTable() {
         return arreyFinal;
     }
 
-    let estado0 = prepararArrey(JSON.parse(localStorage.getItem('leads')), 0);
-    let estado1 = prepararArrey(JSON.parse(localStorage.getItem('leads')), 1);
-    let estado2 = prepararArrey(JSON.parse(localStorage.getItem('leads')), 2);
+
+    let estado0;
+    let estado1;
+    let estado2;
+
+
+    if (localStorage.getItem('leads') !== null) {
+        estado0 = prepararArrey(JSON.parse(localStorage.getItem('leads')), 0);
+        estado1 = prepararArrey(JSON.parse(localStorage.getItem('leads')), 1);
+        estado2 = prepararArrey(JSON.parse(localStorage.getItem('leads')), 2);
+    } else {
+        estado0 = null;
+        estado1 = null;
+        estado2 = null;
+    }
 
     //Fim da área de teste
 

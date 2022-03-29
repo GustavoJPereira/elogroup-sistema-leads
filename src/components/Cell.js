@@ -19,7 +19,7 @@ function Cell({ itens, ultima }) {
     }
 
     //Retira o botão de passar da ultima coluna
-    function retiraProximo(item) {
+    function retirarOpcoes(item) {
         if (ultima === 'S' || item === '') {
             return styles.celula_sem_botao;
         } else {
@@ -29,11 +29,13 @@ function Cell({ itens, ultima }) {
 
     return (
         <>
-            {
+            {itens !== null ? (
                 itens.map((item, i) => (
-                    <div key={i} className={retiraProximo(item)} > <p></p> {item} <Link to={'/leads'} refresh="true"><img src={seta} alt='seta para a direita' onClick={() => clicou(i)} /></Link></div>
+                    <div key={i} className={retirarOpcoes(item)} > <label></label> <p>{item}</p>  <div><Link to={'/leads'} ><img src={seta} alt='seta para a direita' onClick={() => clicou(i)} /></Link></div></div>
 
-                ))
+                ))) : (
+                <div>não há clientes</div>
+            )
             }
         </>
     )

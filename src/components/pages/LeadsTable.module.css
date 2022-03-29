@@ -19,7 +19,6 @@
 .tabelas {
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
 }
 
@@ -37,10 +36,12 @@
 .coluna div {
     width: 100%;
     list-style: none;
-    height: 60px;
+    min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
+    text-align: center;
 }
 
 .coluna::content {
@@ -49,16 +50,19 @@
 
 /* Barras coloridas */
 .coluna .barra_colorida_1 {
+    min-height: 15px;
     height: 15px;
     background-color: #9F2ABF;
 }
 
 .coluna .barra_colorida_2 {
+    min-height: 15px;
     height: 15px;
     background-color: #BF2AB9;
 }
 
 .coluna .barra_colorida_3 {
+    min-height: 15px;
     height: 15px;
     background-color: #BF2A60;
 }
@@ -71,4 +75,48 @@
     line-height: 33px;
     color: #FFF;
     font-weight: 400;
+}
+
+@media only screen and (max-width: 950px) {
+
+    .corpo {
+        width: calc(100% - 50px);
+        margin: 20px 0;
+    }
+
+    .coluna div {
+        min-height: 40px;
+    }
+
+    .coluna div p {
+        padding: 5px;
+    }
+
+    .coluna div.th {
+        min-height: 80px;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+
+    .corpo {
+        width: 100%;
+    }
+
+    .tabelas {
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+        gap: 1px;
+    }
+
+    .coluna {
+        width: calc(100% / 3);
+        box-shadow: none;
+    }
+
+    .coluna div.th {
+        min-height: 80px;
+        font-size: 17px;
+    }
+    
 }

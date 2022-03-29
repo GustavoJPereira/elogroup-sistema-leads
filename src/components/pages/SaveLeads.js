@@ -66,6 +66,7 @@ function SaveLeads() {
 
             leads.push(lead);
             localStorage.setItem('leads', JSON.stringify(leads));
+            alert('Lead Salvo');
         } else {
             alert("Preencha corretamente todos os campos");
         }
