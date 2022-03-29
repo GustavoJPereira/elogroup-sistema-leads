@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/layout/Header';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Signin from './components/pages/Signin';
+import LeadsTable from './components/pages/LeadsTable';
+import SaveLeads from './components/pages/SaveLeads';
+import TesteMap from './components/pages/TesteMap';
+import { createBrowserHistory } from "history"
+const history = createBrowserHistory({
+  basename: "/"
+})
+
+window.redirect = history.push;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div onClick={() => window.redirect('/')}></div>
+      <Router>
+        <Header></Header>
+        <Routes>
+          <Route exact path='/' element={<Signin />} />
+          <Route exact path='/leads' element={<LeadsTable />} />
+          <Route exact path='/saveleads' element={<SaveLeads />} />
+          <Route exact path='/testemap' element={<TesteMap />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
