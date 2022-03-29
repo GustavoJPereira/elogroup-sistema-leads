@@ -5,9 +5,6 @@ import styles from './LeadsTable.module.css';
 
 function LeadsTable() {
 
-
-    // Area de testee
-
     function prepararArrey(arrey, estado) {
         let arreyFinal = [];
         for (let i = 0; i < arrey.length; i++) {
@@ -17,15 +14,12 @@ function LeadsTable() {
                 arreyFinal[i] = "";
             }
         }
-        console.log(arreyFinal);
         return arreyFinal;
     }
-
 
     let estado0;
     let estado1;
     let estado2;
-
 
     if (localStorage.getItem('leads') !== null) {
         estado0 = prepararArrey(JSON.parse(localStorage.getItem('leads')), 0);
@@ -36,9 +30,6 @@ function LeadsTable() {
         estado1 = null;
         estado2 = null;
     }
-
-    //Fim da área de teste
-
 
     return (
         <div className={styles.corpo}><Link to={'/saveleads'} className={styles.btn_primario}>

@@ -2,7 +2,6 @@ import styles from './Cell.module.css'
 import seta from '../images/seta.svg'
 import { Link } from 'react-router-dom';
 
-
 function Cell({ itens, ultima }) {
 
     function clicou(i) {
@@ -31,7 +30,11 @@ function Cell({ itens, ultima }) {
         <>
             {itens !== null ? (
                 itens.map((item, i) => (
-                    <div key={i} className={retirarOpcoes(item)} > <label></label> <p>{item}</p>  <div><Link to={'/leads'} ><img src={seta} alt='seta para a direita' onClick={() => clicou(i)} /></Link></div></div>
+                    <div key={i} className={retirarOpcoes(item)} >
+                        <label></label>
+                        <p>{item}</p>
+                        <div><Link to={'/leads'} ><img src={seta} alt='seta para a direita' onClick={() => clicou(i)} /></Link></div>
+                    </div>
 
                 ))) : (
                 <div>não há clientes</div>

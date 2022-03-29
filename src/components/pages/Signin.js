@@ -2,8 +2,6 @@ import styles from './Signin.module.css';
 import logo from '../../images/logo_com_fundo.svg';
 import { useState } from 'react';
 
-
-
 function Signin() {
 
     const [usuario, setUsuario] = useState();
